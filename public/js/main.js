@@ -1,14 +1,13 @@
-
 /* jQuery Pre loader
  -----------------------------------------------*/
-$(window).load(function(){
+$(window).load(function () {
     $('.preloader').fadeOut(1000); // set duration in brackets
 });
 
 
 /* Mobile Navigation
     -----------------------------------------------*/
-$(window).scroll(function() {
+$(window).scroll(function () {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {
@@ -19,11 +18,11 @@ $(window).scroll(function() {
 
 /* HTML document is loaded. DOM is ready.
 -------------------------------------------*/
-$(document).ready(function() {
+$(document).ready(function () {
 
     /* Hide mobile menu after clicking on a link
       -----------------------------------------------*/
-    $('.navbar-collapse a').click(function(){
+    $('.navbar-collapse a').click(function () {
         $(".navbar-collapse").collapse('hide');
     });
 
@@ -44,27 +43,28 @@ $(document).ready(function() {
         $('#contact').parallax("100%", 0.2);
 
     }
+
     initParallax();
 
 
     /* Owl Carousel
     -----------------------------------------------*/
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#owl-speakers").owlCarousel({
             autoPlay: 6000,
-            items : 4,
-            itemsDesktop : [1199,2],
-            itemsDesktopSmall : [979,1],
-            itemsTablet: [768,1],
-            itemsTabletSmall: [985,2],
-            itemsMobile : [479,1],
+            items: 4,
+            itemsDesktop: [1199, 2],
+            itemsDesktopSmall: [979, 1],
+            itemsTablet: [768, 1],
+            itemsTabletSmall: [985, 2],
+            itemsMobile: [479, 1],
         });
     });
 
 
     /* Back top
     -----------------------------------------------*/
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
             $('.go-top').fadeIn(200);
         } else {
@@ -72,15 +72,16 @@ $(document).ready(function() {
         }
     });
     // Animate the scroll to top
-    $('.go-top').click(function(event) {
+    $('.go-top').click(function (event) {
         event.preventDefault();
         $('html, body').animate({scrollTop: 0}, 300);
     })
 
+    var scroll = new SmoothScroll('a[href*="#"]',{speed: 1500});
 
     /* wow
     -------------------------------*/
-    new WOW({ mobile: false }).init();
+    new WOW({mobile: false}).init();
 
 });
 

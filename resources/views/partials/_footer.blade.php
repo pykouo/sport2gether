@@ -3,9 +3,7 @@
         <div class="row">
 
             <div class="col-md-12 col-sm-12">
-                <p class="wow fadeInUp" data-wow-delay="0.6s">Copyright &copy; 2016 Your Company
-
-                    | Design: <a rel="nofollow" href="http://www.templatemo.com/page/1" target="_parent">Templatemo</a></p>
+                <p class="wow fadeInUp" data-wow-delay="0.6s">Copyright &copy; 2017 Sport2gether co.</p>
 
                 <ul class="social-icon">
                     <li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
