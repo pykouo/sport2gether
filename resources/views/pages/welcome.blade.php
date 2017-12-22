@@ -113,8 +113,8 @@
                         <div class="speakers-wrapper">
                             <img src="{{url('images/speakers-img2.jpg')}}" class="img-responsive" alt="speakers">
                             <div class="speakers-thumb">
-                                <h3>PEI-YU KUO</h3>
-                                <h6>Font-end Develper</h6>
+                                <h3>Jason Tseng</h3>
+                                <h6>Product Manager</h6>
                             </div>
                         </div>
                     </div>
@@ -123,8 +123,8 @@
                         <div class="speakers-wrapper">
                             <img src="{{url('images/speakers-img3.jpg')}}" class="img-responsive" alt="speakers">
                             <div class="speakers-thumb">
-                                <h3>Je Mary Lee</h3>
-                                <h6>Web Specialist</h6>
+                                <h3>PEI-YU KUO</h3>
+                                <h6>Font-End Developer</h6>
                             </div>
                         </div>
                     </div>
@@ -133,8 +133,8 @@
                         <div class="speakers-wrapper">
                             <img src="{{url('images/speakers-img4.jpg')}}" class="img-responsive" alt="speakers">
                             <div class="speakers-thumb">
-                                <h3>Johnathan Doe</h3>
-                                <h6>Frontend Dev</h6>
+                                <h3>Derek Lai</h3>
+                                <h6>Back-End Developer</h6>
                             </div>
                         </div>
                     </div>
@@ -143,8 +143,8 @@
                         <div class="speakers-wrapper">
                             <img src="{{url('images/speakers-img5.jpg')}}" class="img-responsive" alt="speakers">
                             <div class="speakers-thumb">
-                                <h3>Elite Hamilton</h3>
-                                <h6>Marketing Guru</h6>
+                                <h3>Connie Lin</h3>
+                                <h6>Back-End Developer</h6>
                             </div>
                         </div>
                     </div>

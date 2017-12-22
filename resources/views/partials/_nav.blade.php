@@ -19,8 +19,8 @@
                 {{--<li><a href="#speakers" class="smoothScroll">Speakers</a></li>--}}
                 {{--<li><a href="#program" class="smoothScroll">Programs</a></li>--}}
                 {{--<li><a href="#register" class="smoothScroll">Register</a></li>--}}
-                <li><a href="/activities" class="smoothScroll">Activities</a></li>
-                {{--<li><a href="#sponsors" class="smoothScroll">Sponsors</a></li>--}}
+                <li><a href="/activity">Activity</a></li>
+                <li><a href="/user">PEI-YU KUO</a></li>
                 <li><a href="/login">Login/Register</a></li>
             </ul>
 

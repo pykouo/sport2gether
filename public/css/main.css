@@ -13,15 +13,14 @@ body {
     font-weight: 400;
 }
 
-
 /*---------------------------------------
     Typorgraphy
 -----------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-h3,h5 {
+h3, h5 {
     font-weight: 500;
 }
 
@@ -55,7 +54,6 @@ a {
     outline: none;
 }
 
-
 /*---------------------------------------
     General
 -----------------------------------------*/
@@ -64,7 +62,9 @@ a {
 }
 
 #overview,
-#register {
+#register,
+#login,
+#user {
     padding-top: 14rem;
     padding-bottom: 14rem;
 }
@@ -84,16 +84,12 @@ footer {
     text-align: center;
 }
 
-#overview h3,
-#detail h3, #video h3,
-#register h3,
-#venue h3,
-#contact h3 {
+h3 {
     padding-bottom: 12px;
 }
 
 #intro .btn,
-#contact .btn {
+#contact .btn{
     background: transparent;
     border: 2px solid #ffffff;
     border-radius: 0px;
@@ -139,8 +135,6 @@ footer {
     background-size: cover !important;
 }
 
-
-
 /*---------------------------------------
     Preloader section
 -----------------------------------------*/
@@ -163,31 +157,38 @@ footer {
     height: 50px;
     background-color: #222;
     -webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
-    animation: sk-rotatePlane 1.2s infinite ease-in-out; }
+    animation: sk-rotatePlane 1.2s infinite ease-in-out;
+}
 
 @-webkit-keyframes sk-rotatePlane {
     0% {
         -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-        transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
     50% {
         -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    }
     100% {
         -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
 
 @keyframes sk-rotatePlane {
     0% {
         -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-        transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
     50% {
         -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    }
     100% {
         -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
-
-
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
 
 /*---------------------------------------
     Navigation Links section
@@ -243,20 +244,19 @@ footer {
     border-color: transparent;
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
     .custom-navbar {
         padding: 20px 0;
         border-bottom: 0;
         background: 0 0;
     }
+
     .custom-navbar.top-nav-collapse {
         background: #101010;
         padding: 0;
     }
 
 }
-
-
 
 /*---------------------------------------
     Intro section
@@ -283,8 +283,6 @@ footer {
     letter-spacing: 2px;
 }
 
-
-
 /*---------------------------------------
    Overview  section
 -----------------------------------------*/
@@ -292,8 +290,6 @@ footer {
     position: relative;
     padding-bottom: 32px;
 }
-
-
 
 /*---------------------------------------
     Detail section
@@ -307,17 +303,6 @@ footer {
     color: #f2545f;
     font-size: 48px;
 }
-
-
-
-/*---------------------------------------
-    Video section
------------------------------------------*/
-#video iframe {
-    border: none;
-}
-
-
 
 /*---------------------------------------
    Speakers section
@@ -355,71 +340,12 @@ footer {
     padding-bottom: 22px;
 }
 
-
-
-/*---------------------------------------
-   Program section
------------------------------------------*/
-#program h4 {
-    color: #808080;
-    font-size: 12px;
-}
-
-#program h3 {
-    margin-top: 16px;
-}
-
-#program .program-divider {
-    border: 1px solid #f9f9f9;
-    margin-top: 32px;
-    margin-bottom: 42px;
-}
-
-#program span {
-    padding-right: 12px;
-}
-
-#program img {
-    border-radius: 50%;
-}
-
-.nav-tabs {
-    margin-bottom: 20px;
-}
-.nav-tabs > li {
-    float: left;
-    margin-bottom: -1px;
-}
-.nav-tabs > li > a {
-    color: #000000;
-    font-weight: 600;
-    margin-right: 2px;
-    line-height: 1.42857143;
-    border: none;
-    border-radius: 0px;
-}
-.nav-tabs > li > a:hover {
-    background-color: transparent;
-}
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-    color: #f2545f;
-    cursor: default;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-bottom-color: #999;
-}
-.tab-content {
-    padding-top: 20px;
-}
-
-
-
 /*---------------------------------------
     Regsiter section
 -----------------------------------------*/
-#register {
+#register,
+#login,
+#user {
     background: url('../images/register-bg.jpg') 50% 0 repeat-y fixed;
     -webkit-background-size: cover;
     background-size: cover;
@@ -427,7 +353,7 @@ footer {
     color: #ffffff;
 }
 
-#register .form-control {
+.form-control {
     background: transparent;
     border: 2px solid #ffffff;
     border-radius: 0px;
@@ -435,11 +361,16 @@ footer {
     margin-bottom: 16px;
 }
 
-#register input {
+input {
     height: 45px;
 }
 
-#register input[type="submit"] {
+input:disabled {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+input[type="submit"] {
     background: #f2545f;
     border-radius: 100px;
     border: none;
@@ -450,12 +381,10 @@ footer {
     transition: all 0.4s ease-in-out;
 }
 
-#register input[type="submit"]:hover {
+input[type="submit"]:hover {
     background: #ffffff;
     color: #222;
 }
-
-
 
 /*---------------------------------------
    Faq section
@@ -478,7 +407,7 @@ footer {
     border: none;
 }
 
-#faq .panel-default>.panel-heading {
+#faq .panel-default > .panel-heading {
     background: #f0f0f0;
     color: #505050;
 }
@@ -489,7 +418,7 @@ footer {
     padding-bottom: 6px;
 }
 
-#faq .panel-default>.panel-heading+.panel-collapse>.panel-body {
+#faq .panel-default > .panel-heading + .panel-collapse > .panel-body {
     border-top: none;
     padding-top: 22px;
     padding-left: 32px;
@@ -520,8 +449,6 @@ footer {
     content: "+";
 }
 
-
-
 /*---------------------------------------
    Venue section
 -----------------------------------------*/
@@ -537,17 +464,6 @@ footer {
     padding-top: 12px;
     padding-bottom: 18px;
 }
-
-
-
-/*---------------------------------------
-   Sponsors section
------------------------------------------*/
-#sponsors img {
-    margin-top: 18px;
-}
-
-
 
 /*---------------------------------------
    Contact section
@@ -601,16 +517,12 @@ footer {
     background: #f2545f;
 }
 
-
-
 /*---------------------------------------
    Footer section
 -----------------------------------------*/
 footer {
     background-attachment: fixed;
 }
-
-
 
 /* Back top */
 .go-top {
@@ -633,7 +545,6 @@ footer {
     background: #f2545f;
     color: #ffffff;
 }
-
 
 /*---------------------------------------
    Social icon
@@ -667,14 +578,96 @@ footer {
     color: #ffffff;
 }
 
+/*---------------------------------------
+   activity list
+-----------------------------------------*/
 
+.activity-list {
+    padding-top: 20px;
+}
+
+.activity-list li {
+    list-style: none;
+}
+
+.activity-content {
+}
+
+.activity-list {
+}
+
+.activity-list > li {
+    /*overflow: hidden;*/
+    /*padding-top: 15px;*/
+    /*padding-bottom: 15px;*/
+    /*border-top: 1px solid #e4e4e4;*/
+}
+
+.activity-list > li:last-child {
+    /*border-bottom: 1px solid #e4e4e4;*/
+}
+
+.activity-title {
+    overflow: hidden;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-top: 1px solid #eee;
+}
+
+.activity-title p {
+    margin: 0;
+}
+
+.activity-title li {
+    /*display: inline-block;*/
+}
+
+.activity-body {
+    border-bottom: 1px solid #eee;
+}
+
+.activity-reply-count i {
+    margin-right: 5px;
+}
+
+.topic-link {
+    font-weight: bold;
+}
+
+.topic-author::before {
+    content: "started by ";
+}
+
+/*---------------------------------------
+   Activity
+-----------------------------------------*/
+#list .btn {
+    color: #66ccff;
+    border: 2px solid #66ccff;
+    background: transparent;
+    border-radius: 0px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin-top: 42px;
+    margin-right: 12px;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+#list .btn:hover,#list .btn.active{
+    background:#66ccff;
+    color: #FFF;
+}
 
 /*---------------------------------------
    Responsive styles
 -----------------------------------------*/
 @media (max-width: 980px) {
 
-    p {font-size: 13px;}
+    p {
+        font-size: 13px;
+    }
 
     .custom-navbar .navbar-brand {
         font-size: 2rem;
@@ -685,7 +678,9 @@ footer {
         line-height: 20px;
     }
 
-    #intro { height: 65vh; }
+    #intro {
+        height: 65vh;
+    }
 
     #video iframe {
         margin-top: 42px;
@@ -706,7 +701,7 @@ footer {
 
     #overview img,
     #detail .col-md-4,
-    #register form {
+    form {
         padding-top: 32px;
     }
 

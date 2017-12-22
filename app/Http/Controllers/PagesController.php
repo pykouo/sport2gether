@@ -23,6 +23,17 @@ class PagesController extends Controller
     {
         return view('auth.login');
     }
+    public function getUser()
+    {
+        return view('pages.user');
+    }
+    public function getActivity()
+    {
+        return view('pages.activity');
+    }
+    public function getNewActivity(){
+        return view('pages.new-activity');
+    }
 //
 //    public function getContact()
 //    {

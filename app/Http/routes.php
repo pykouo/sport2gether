@@ -17,5 +17,9 @@ Route::get('/home', 'PagesController@getIndex');
 
 Route::get('/register','PagesController@getRegister');
 Route::get('/login','PagesController@getLogin');
+Route::get('/user','PagesController@getUser');
+Route::get('/activity','PagesController@getActivity');
+Route::get('/new-activity','PagesController@getNewActivity');
+
 Route::auth();
 
