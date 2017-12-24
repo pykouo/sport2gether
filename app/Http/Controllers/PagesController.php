@@ -34,6 +34,9 @@ class PagesController extends Controller
     public function getNewActivity(){
         return view('pages.new-activity');
     }
+    public function getActivityDetail(){
+        return view('pages.activity-detail');
+    }
 //
 //    public function getContact()
 //    {

@@ -50,7 +50,7 @@
                                     <li class="activity-type col-md-2"><span class="tag label
                                     label-success">basketball</span></li>
                                     <li class="activity-info col-md-6">
-                                        <a class="topic-link" href="">Looking for girls interested in basketball</a>
+                                        <a class="topic-link" href="/activity-detail">Looking for girls interested in basketball</a>
                                         <p class="topic-author">PEI-YU, KUO</p>
                                     </li>
                                     <li class="activity-person-count col-md-1">3</li>
@@ -63,7 +63,7 @@
                                     <li class="activity-type col-md-2"><span class="tag label
                                     label-success">basketball</span></li>
                                     <li class="activity-info col-md-6">
-                                        <a class="topic-link" href="">Looking for girls interested in basketball</a>
+                                        <a class="topic-link" href="/activity-detail">Looking for girls interested in basketball</a>
                                         <p class="topic-author">PEI-YU, KUO</p>
                                     </li>
                                     <li class="activity-person-count col-md-1">3</li>
@@ -76,7 +76,7 @@
                                     <li class="activity-type col-md-2"><span class="tag label
                                     label-success">basketball</span></li>
                                     <li class="activity-info col-md-6">
-                                        <a class="topic-link" href="">Looking for girls interested in basketball</a>
+                                        <a class="topic-link" href="/activity-detail">Looking for girls interested in basketball</a>
                                         <p class="topic-author">PEI-YU, KUO</p>
                                     </li>
                                     <li class="activity-person-count col-md-1">3</li>
@@ -89,7 +89,7 @@
                                     <li class="activity-type col-md-2"><span class="tag label
                                     label-success">baseball</span></li>
                                     <li class="activity-info col-md-6">
-                                        <a class="topic-link" href="">Looking for girls interested in baseball</a>
+                                        <a class="topic-link" href="/activity-detail">Looking for girls interested in baseball</a>
                                         <p class="topic-author">PEI-YU, KUO</p>
                                     </li>
                                     <li class="activity-person-count col-md-1">3</li>
@@ -102,7 +102,7 @@
                                     <li class="activity-type col-md-2"><span class="tag label
                                     label-success">swim</span></li>
                                     <li class="activity-info col-md-6">
-                                        <a class="topic-link" href="">Looking for girls interested in swim</a>
+                                        <a class="topic-link" href="/activity-detail">Looking for girls interested in swim</a>
                                         <p class="topic-author">PEI-YU, KUO</p>
                                     </li>
                                     <li class="activity-person-count col-md-1">3</li>
@@ -125,7 +125,14 @@
             var tag = $(this).attr('id');
             if(tag=='all'){
                 $('.activity-body .activity-title').fadeIn(450);
+                if(!$(this).hasClass('active')){
+                    $('.active').removeClass('active');
+                    $(this).addClass(' active');
+                }
+
             }else{
+                $('.active').removeClass('active');
+                $(this).addClass(' active');
                 console.log( $('.activity-body').not('.'+tag));
                 var $el = $('.activity-body .'+tag).fadeIn(450);
                 $('.activity-body .activity-title').not($el).hide();

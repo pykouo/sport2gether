@@ -89,7 +89,7 @@ h3 {
 }
 
 #intro .btn,
-#contact .btn{
+#contact .btn {
     background: transparent;
     border: 2px solid #ffffff;
     border-radius: 0px;
@@ -365,9 +365,14 @@ input {
     height: 45px;
 }
 
-input:disabled {
+input:disabled, textarea:disabled {
     background-color: transparent !important;
     border: none !important;
+    color: #101010;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    cursor: default !important;
 }
 
 input[type="submit"] {
@@ -641,7 +646,7 @@ footer {
 /*---------------------------------------
    Activity
 -----------------------------------------*/
-#list .btn {
+.tag-list .btn {
     color: #66ccff;
     border: 2px solid #66ccff;
     background: transparent;
@@ -649,17 +654,88 @@ footer {
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 12px;
-    margin-top: 42px;
+    /*margin-top: 42px;*/
     margin-right: 12px;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
 
-#list .btn:hover,#list .btn.active{
-    background:#66ccff;
+.tag-list .btn:hover, .tag-list .btn.active {
+    background: #66ccff;
     color: #FFF;
 }
 
+#activity-detail form input, #activity-detail form textarea {
+    border: 1px solid #eee;
+    color: #101010;
+}
+
+#activity-detail form input:disabled, #activity-detail form textarea:disabled {
+    /*!*border: none;*!*/
+    /*color: #101010;*/
+    /*-webkit-box-shadow: none;*/
+    /*box-shadow: none;*/
+    /*-webkit-transition: none;*/
+}
+
+#activity-detail .dropdown-menu {
+    min-width: 0px;
+}
+
+#activity-detail .dropdown-menu > li {
+    padding: 5px 10px;
+    margin: 1px 5px;
+    text-align: center;
+}
+
+#activity-detail .dropdown-menu > li:hover {
+    background-color: #eee;
+}
+
+#partner-list, #applicant-list {
+    padding-left: 0;
+    border-top: 1px solid #eee;
+}
+
+#partner-list .btn, #applicant-list .btn {
+    margin-left: 5px;
+}
+
+#partner-list > li, #applicant-list > li {
+    line-height: 30px;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+}
+
+#partner-list > li span {
+    margin: 0px 5px;
+}
+
+textarea{
+    resize: none;
+}
+
+.tool span{
+    padding: 5px 10px;
+    margin: 0px 5px;
+    cursor: pointer;
+    color:#707070;
+
+}
+.tool span:hover{
+    color: #66ccff;
+}
+
+#discuss{
+    margin-top: 50px;
+}
+.card{
+    overflow: hidden;
+}
+.newCard{
+    margin-top: 50px;
+}
 /*---------------------------------------
    Responsive styles
 -----------------------------------------*/

@@ -20,6 +20,7 @@ Route::get('/login','PagesController@getLogin');
 Route::get('/user','PagesController@getUser');
 Route::get('/activity','PagesController@getActivity');
 Route::get('/new-activity','PagesController@getNewActivity');
+Route::get('/activity-detail','PagesController@getActivityDetail');
 
 Route::auth();
 
