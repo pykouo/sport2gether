@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', '| User')
+@section('title', '| Activity List')
 
 @section('content')
     <section id="intro" class="parallax-section">

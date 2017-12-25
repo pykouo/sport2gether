@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
-@section('title', '| User')
+@section('title', '| Activity Detail')
+
 @section('stylesheets')
     <link rel="stylesheet" href="{{url('/css/new-activity.css')}}">
 @stop
@@ -77,31 +78,29 @@
                             <label for="partner-list" class="col-md-4 control-label">Partners</label>
                             <div class="col-md-6">
                                 <ul id="partner-list" class="member-list">
-                                    <li><span class="name">Lily White</span><span
-                                                class="phone">09461234712</span>
-                                        <button type="button" class="btn
-                        btn-sm btn-danger pull-right">X
-                                        </button>
+                                    {{--girl--}}
+                                    {{--<i class="fa fa-venus" aria-hidden="true"></i>--}}
+                                    {{--boy--}}
+                                    {{--<i class="fa fa-mars" aria-hidden="true"></i>--}}
+                                    {{--other--}}
+                                    {{--<i class="fa fa-neuter" aria-hidden="true"></i>--}}
+                                    <li>
+                                        <span class="gender"><i class="fa fa-venus" aria-hidden="true"></i></span>
+                                        <span class="name">Lily White</span>
+                                        <span class="phone">09461234712</span>
+                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
                                     </li>
-                                    <li><span class="name">Lily White</span><span class="phone">09461234712</span>
-                                        <button type="button" class="btn
-                        btn-sm btn-danger pull-right">X
-                                        </button>
+                                    <li>
+                                        <span class="gender"><i class="fa fa-mars" aria-hidden="true"></i></span>
+                                        <span class="name">Kevin White</span>
+                                        <span class="phone">09461234712</span>
+                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
                                     </li>
-                                    <li><span class="name">Lily White</span><span class="phone">09461234712</span>
-                                        <button type="button" class="btn
-                        btn-sm btn-danger pull-right">X
-                                        </button>
-                                    </li>
-                                    <li><span class="name">Lily White</span><span class="phone">09461234712</span>
-                                        <button type="button" class="btn
-                        btn-sm btn-danger pull-right">X
-                                        </button>
-                                    </li>
-                                    <li><span class="name">Lily White</span><span class="phone">09461234712</span>
-                                        <button type="button" class="btn
-                        btn-sm btn-danger pull-right">X
-                                        </button>
+                                    <li>
+                                        <span class="gender"><i class="fa fa-neuter" aria-hidden="true"></i></span>
+                                        <span class="name">Neuter White</span>
+                                        <span class="phone">09461234712</span>
+                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
                                     </li>
                                 </ul>
                             </div>
@@ -111,29 +110,29 @@
                             <label for="applicant-list" class="col-md-4 control-label">Applicants</label>
                             <div class="col-md-6">
                                 <ul id="applicant-list" class="member-list">
-                                    <li><span id="id in db" class="name">Jane Doe</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X
-                                        </button>
-                                        <button type="button" class="btn  btn-sm btn-success pull-right">O
-                                        </button>
+                                    <li>
+                                        <span class="gender"><i class="fa fa-venus" aria-hidden="true"></i></span>
+                                        <span class="name">Jane Doe</span>
+                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
+                                        <button type="button" class="btn  btn-sm btn-success pull-right">O</button>
                                     </li>
-                                    <li><span id="id in db" class="name">Jane Doe</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X
-                                        </button>
-                                        <button type="button" class="btn  btn-sm btn-success pull-right">O
-                                        </button>
+                                    <li>
+                                        <span class="gender"><i class="fa fa-venus" aria-hidden="true"></i></span>
+                                        <span class="name">Jane Doe</span>
+                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
+                                        <button type="button" class="btn  btn-sm btn-success pull-right">O</button>
                                     </li>
-                                    <li><span id="id in db" class="name">Jane Doe</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X
-                                        </button>
-                                        <button type="button" class="btn  btn-sm btn-success pull-right">O
-                                        </button>
+                                    <li>
+                                        <span class="gender"><i class="fa fa-venus" aria-hidden="true"></i></span>
+                                        <span class="name">Jane Doe</span>
+                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
+                                        <button type="button" class="btn  btn-sm btn-success pull-right">O</button>
                                     </li>
-                                    <li><span id="id in db" class="name">Jane Doe</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X
-                                        </button>
-                                        <button type="button" class="btn  btn-sm btn-success pull-right">O
-                                        </button>
+                                    <li>
+                                        <span class="gender"><i class="fa fa-venus" aria-hidden="true"></i></span>
+                                        <span class="name">Jane Doe</span>
+                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
+                                        <button type="button" class="btn  btn-sm btn-success pull-right">O</button>
                                     </li>
                                 </ul>
                             </div>
@@ -144,77 +143,89 @@
                         {{--discussssss--}}
                         <div id="discuss">
                             <h3>Discussion</h3>
-                                <div class="col-md-8 col-md-offset-2">
-                                    <div class="card">
-                                        <div class="col-md-3 person-info">
-                                            <div class="col-md-12 name">Jane Doe</div>
-                                            <div class="col-md-12 time">2017/11/12 13:40</div>
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="card">
+                                    <div class="col-md-3 person-info">
+                                        <div class="col-md-12">
+                                            <div class="gender-icon gender-female-icon"></div>
                                         </div>
-                                        <div class="col-md-9 person-info">
-                                            <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                                officia deserunt mollit anim id est laborum.</p>
-                                        </div>
+                                        <div class="col-md-12 name">Jane Doe</div>
+                                        <div class="col-md-12 time">2017/11/12 13:40</div>
                                     </div>
+                                    <div class="col-md-9 person-info">
+                                        <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                            officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                </div>
 
-                                    <div class="card">
-                                        <div class="col-md-3 person-info">
-                                            <div class="col-md-12 name">Jane Doe</div>
-                                            <div class="col-md-12 time">2017/11/12 13:40</div>
+                                <div class="card">
+                                    <div class="col-md-3 person-info">
+                                        <div class="col-md-12">
+                                            <div class="gender-icon gender-male-icon"></div>
                                         </div>
-                                        <div class="col-md-9 person-info">
-                                            <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                                officia deserunt mollit anim id est laborum.</p>
-                                        </div>
+                                        <div class="col-md-12 name">Jane Doe</div>
+                                        <div class="col-md-12 time">2017/11/12 13:40</div>
                                     </div>
+                                    <div class="col-md-9 person-info">
+                                        <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                            officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                </div>
 
-                                    <div class="card">
-                                        <div class="col-md-3 person-info">
-                                            <div class="col-md-12 name">Jane Doe</div>
-                                            <div class="col-md-12 time">2017/11/12 13:40</div>
+                                <div class="card">
+                                    <div class="col-md-3 person-info">
+                                        <div class="col-md-12">
+                                            <div class="gender-icon gender-neuter-icon"></div>
                                         </div>
-                                        <div class="col-md-9 person-info">
-                                            <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                                in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                                officia deserunt mollit anim id est laborum.</p>
-                                        </div>
+                                        <div class="col-md-12 name">Jane Doe</div>
+                                        <div class="col-md-12 time">2017/11/12 13:40</div>
                                     </div>
-{{--create new commet--}}
-                                    <div class="card newCard">
-                                        <h3>Leave A Comment</h3>
-                                        <div class="col-md-3 person-info">
-                                            <div class="col-md-12 name">Jane Doe</div>
-                                            <div class="col-md-12 time">2017/11/12 13:40</div>
+                                    <div class="col-md-9 person-info">
+                                        <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                            officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                </div>
+                                {{--create new commet--}}
+                                <div class="card newCard">
+                                    <h3>Leave A Comment</h3>
+                                    <div class="col-md-3 person-info">
+                                        <div class="col-md-12">
+                                            <div class="gender-icon gender-neuter-icon"></div>
                                         </div>
-                                        <div class="col-md-9 person-info">
+                                        <div class="col-md-12 name">Jane Doe</div>
+                                        <div class="col-md-12 time">2017/11/12 13:40</div>
+                                    </div>
+                                    <div class="col-md-9 person-info">
                                             <textarea name="newcomment" class="form-control" id="newcomment" rows="10"
                                             ></textarea>
-                                        </div>
                                     </div>
-
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-4">
-                                            <button type="submit" class="btn btn-primary">
-                                                Submit
-                                            </button>
-                                        </div>
-                                    </div>
-
                                 </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+
                             </div>
+                        </div>
 
 
                     </form>

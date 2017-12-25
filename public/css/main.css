@@ -135,6 +135,9 @@ h3 {
     background-size: cover !important;
 }
 
+.parallax-section input:disabled{
+    color: #FFF;
+}
 /*---------------------------------------
     Preloader section
 -----------------------------------------*/
@@ -678,37 +681,38 @@ footer {
     /*-webkit-transition: none;*/
 }
 
-#activity-detail .dropdown-menu {
+.dropdown-menu {
     min-width: 0px;
+    color: #101010;
 }
 
-#activity-detail .dropdown-menu > li {
+.dropdown-menu > li {
     padding: 5px 10px;
     margin: 1px 5px;
     text-align: center;
 }
 
-#activity-detail .dropdown-menu > li:hover {
+.dropdown-menu > li:hover {
     background-color: #eee;
 }
 
-#partner-list, #applicant-list {
+.member-list {
     padding-left: 0;
     border-top: 1px solid #eee;
 }
 
-#partner-list .btn, #applicant-list .btn {
+.member-list .btn {
     margin-left: 5px;
 }
 
-#partner-list > li, #applicant-list > li {
+.member-list > li {
     line-height: 30px;
     overflow: hidden;
     border-bottom: 1px solid #eee;
     padding: 5px;
 }
 
-#partner-list > li span {
+.member-list span {
     margin: 0px 5px;
 }
 
@@ -733,8 +737,42 @@ textarea{
 .card{
     overflow: hidden;
 }
+.card .name{
+    font-size: 15px;
+    text-align: center;
+
+}
+.card .time{
+    font-size: 10px;
+    text-align: center;
+
+}
 .newCard{
     margin-top: 50px;
+}
+
+/*gender*/
+
+.gender-icon{
+    width: 40px;
+    height: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.gender-male-icon {
+    background: url('../images/gender-male.svg') no-repeat;
+    background-size: 100%;
+}
+
+.gender-female-icon {
+    background: url('../images/gender-female.svg') no-repeat;
+    background-size: 100%;
+}
+
+.gender-neuter-icon {
+    background: url('../images/gender-neuter.png') no-repeat;
+    background-size: 100%;
 }
 /*---------------------------------------
    Responsive styles

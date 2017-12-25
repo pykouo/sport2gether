@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
-@section('title', '| User')
+@section('title', '| Create Activity')
+
 @section('stylesheets')
     <link rel="stylesheet" href="{{url('/css/new-activity.css')}}">
 @stop

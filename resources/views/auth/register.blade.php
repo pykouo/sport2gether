@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', '| Register')
+
 @section('content')
 
 
@@ -26,6 +28,25 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="gender" class="col-md-4 control-label">Gender</label>
+
+                            <div class="col-md-6">
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        <span class="value">Male</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li>Male</li>
+                                        <li>Female</li>
+                                        <li>Other</li>
+                                    </ul>
+                                </div>
+                                <input id="gender" type="text" name="gender" hidden>
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label for="phone" class="col-md-4 control-label">Phone Number</label>
 
@@ -98,5 +119,14 @@
             </div>
         </div>
     </section>
+@stop
 
-@endsection
+@section('scripts')
+    <script>
+        $('ul.dropdown-menu>li').on('click', function () {
+            $(this).parent().parent().find('button').find('.value').text($(this).text());
+            $('#gender').val($(this).text());
+            console.log($('#gender').val());
+        });
+    </script>
+@stop

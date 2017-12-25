@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', '| User')
+@section('title', '| User Management')
 
 @section('content')
     {{-- change their personal information --}}
@@ -18,6 +18,15 @@
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name"
                                        value="名字" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender" class="col-md-4 control-label">Gender</label>
+
+                            <div class="col-md-6">
+                                <input id="gender" type="text" class="form-control" name="gender"
+                                       value="male" disabled>
                             </div>
                         </div>
 
@@ -40,9 +49,9 @@
                                 <input id="password" type="password" class="form-control" name="password"
                                        disable>
                             </div>
-                            <button type="submit" class="btn btn-primary" id="btnPassword">
-                                change
-                            </button>
+                            {{--<button type="submit" class="btn btn-primary" id="btnPassword">--}}
+                                {{--change--}}
+                            {{--</button>--}}
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary center-block" id="btnChange">
