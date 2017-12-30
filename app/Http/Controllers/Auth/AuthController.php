@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use GuzzleHttp\Client;
+use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -30,6 +32,8 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/';
 
+    protected $client;
+
     /**
      * Create a new authentication controller instance.
      *
@@ -38,12 +42,13 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->client = new Client(['base_uri' => 'http://140.118.109.185/api/']);
     }
 
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -59,7 +64,7 @@ class AuthController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
     protected function create(array $data)
@@ -69,6 +74,59 @@ class AuthController extends Controller
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
+            'gender' => $data['gender'],
         ]);
+    }
+
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    protected function login(Request $request)
+    {
+        $this->validate($request, ['email' => 'required|email', 'password' => 'required']);
+        $response = $this->client->request('POST', 'users/login', [
+            'form_params' => [
+                'email' => $request->input('email'),
+                'password' => $request->input('password')
+            ]
+        ]);
+        $user = json_decode($response->getBody(), true);
+        if($user['error']){
+            return redirect()->back()->with('message',$user['message']);
+        }else{
+            \Session::put('user_id', $user['user']['id']);
+            \Session::put('username', $user['user']['username']);
+            \Session::put('gender', $user['user']['gender']);
+            return redirect()->to('/activities');
+        }
+
+    }
+
+    protected function register(Request $request)
+    {
+        $this->validate($request, ['email' => 'required|email', 'password' => 'required', 'name' => 'required', 'gender' => 'required',
+            'phone' => 'required', 'password_confirmation' => 'required']);
+
+        $response = $this->client->request('POST','users/register', [
+            'form_params' => [
+                'email' => $request->input('email'),
+                'password' => $request->input('password'),
+                'username' => $request->input('name'),
+                'phone' => $request->input('phone'),
+                'gender' => $request->input('gender')
+            ]
+        ]);
+        $user = json_decode($response->getBody(), true);
+        if($user['error']){
+            return redirect()->back()->with('message', $user['message']);
+        }else{
+            return redirect()->to('/login')->with('message', $user['message']);
+        }
+    }
+    protected function logout(){
+        \Session::flush();
+        return redirect()->to('/');
     }
 }

@@ -11,55 +11,52 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <div class="alert alert-danger" hidden>
+                    </div>
                     <form class="form-horizontal" role="form" method="POST" action="">
-                        {{--this part can only be seen if you're the author--}}
-                        <div class="form-group">
-                            <div class="tool pull-right"><span id="delete">delete</span><span
-                                        id="edit">edit</span></div>
-                        </div>
-                        {{--******************--}}
                         <div class="form-group">
                             <div class="tag-list">
                                 <label for="tag" class="col-md-4 control-label">Sport Type: </label>
                                 <div class="col-md-6">
                                     {{--only show the real tag--}}
-                                    <div class="btn btn-sm btn-default" id="basketball">Basketball</div>
-                                    {{--<div class="btn btn-sm btn-default" id="baseball">Baseball</div>--}}
-                                    {{--<div class="btn btn-sm btn-default" id="swim">Swim</div>--}}
-                                    {{--<div class="btn btn-sm btn-default" id="soccer">Soccer</div>--}}
-                                    {{--<input id="tag" type="text" name="tag" hidden>--}}
+                                    <div class="btn btn-sm btn-default" id="basketball">{{$activity->type}}</div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="topic" class="col-md-4 control-label">Topic</label>
                             <div class="col-md-6">
-                                <input id="topic" type="text" class="form-control" name="topic" value="test" disabled>
+                                <input id="topic" type="text" class="form-control" name="topic"
+                                       value="{{$activity->topic}}" disabled>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="author" class="col-md-4 control-label">Author</label>
                             <div class="col-md-6">
-                                <input id="author" type="text" class="form-control" name="author" value="test" disabled>
+                                <input id="author" type="text" class="form-control" name="author"
+                                       value="{{$activity->user->username}}" disabled>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="time" class="col-md-4 control-label">Time</label>
                             <div class="col-md-6">
-                                <input id="time" type="text" class="form-control" name="time" value="test" disabled>
+                                <input id="time" type="text" class="form-control" name="time"
+                                       value="{{$activity->time}}" disabled>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="location" class="col-md-4 control-label">Location</label>
                             <div class="col-md-6">
-                                <input id="location" type="text" class="form-control" name="location" value="test"
+                                <input id="location" type="text" class="form-control" name="location"
+                                       value="{{$activity->location}}"
                                        disabled>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="numOfMember" class="col-md-4 control-label"># of partners you need</label>
                             <div class="col-md-6">
-                                <input id="numOfMember" type="text" class="form-control" name="numOfMember" value="1"
+                                <input id="numOfMember" type="text" class="form-control" name="numOfMember"
+                                       value="{{$activity->people}}"
                                        disabled>
                             </div>
                         </div>
@@ -68,152 +65,65 @@
                             <label for="description" class="col-md-4 control-label">description</label>
                             <div class="col-md-6">
                                 <textarea id="description" type="text" class="form-control" name="description"
-                                          disabled>testestsetsetsetsetsetsetetsets</textarea>
+                                          disabled>{{$activity->description}}</textarea>
                             </div>
                         </div>
                         {{--this part can only be seen if you're the author--}}
-                        <hr>
-                        <h3>Partners Management</h3>
-                        <div class="form-group">
-                            <label for="partner-list" class="col-md-4 control-label">Partners</label>
-                            <div class="col-md-6">
-                                <ul id="partner-list" class="member-list">
-                                    {{--girl--}}
-                                    {{--<i class="fa fa-venus" aria-hidden="true"></i>--}}
-                                    {{--boy--}}
-                                    {{--<i class="fa fa-mars" aria-hidden="true"></i>--}}
-                                    {{--other--}}
-                                    {{--<i class="fa fa-neuter" aria-hidden="true"></i>--}}
-                                    <li>
-                                        <span class="gender"><i class="fa fa-venus" aria-hidden="true"></i></span>
-                                        <span class="name">Lily White</span>
-                                        <span class="phone">09461234712</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
-                                    </li>
-                                    <li>
-                                        <span class="gender"><i class="fa fa-mars" aria-hidden="true"></i></span>
-                                        <span class="name">Kevin White</span>
-                                        <span class="phone">09461234712</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
-                                    </li>
-                                    <li>
-                                        <span class="gender"><i class="fa fa-neuter" aria-hidden="true"></i></span>
-                                        <span class="name">Neuter White</span>
-                                        <span class="phone">09461234712</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
-                                    </li>
-                                </ul>
+                        @if($activity->user->id != \Session::get('user_id') )
+                            <div class="form-group text-center">
+                                <div class="col-md-12">
+                                    <a id="apply" data-activity-id="{{$activity->id}}"
+                                       data-user-id="{{$activity->user->id}}"
+                                       data-applicant-user-id="{{\Session::get('user_id')}}" class="btn btn-danger">
+                                        @if($activity->have_apply) Cancel Apply @else Apply @endif
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="applicant-list" class="col-md-4 control-label">Applicants</label>
-                            <div class="col-md-6">
-                                <ul id="applicant-list" class="member-list">
-                                    <li>
-                                        <span class="gender"><i class="fa fa-venus" aria-hidden="true"></i></span>
-                                        <span class="name">Jane Doe</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
-                                        <button type="button" class="btn  btn-sm btn-success pull-right">O</button>
-                                    </li>
-                                    <li>
-                                        <span class="gender"><i class="fa fa-venus" aria-hidden="true"></i></span>
-                                        <span class="name">Jane Doe</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
-                                        <button type="button" class="btn  btn-sm btn-success pull-right">O</button>
-                                    </li>
-                                    <li>
-                                        <span class="gender"><i class="fa fa-venus" aria-hidden="true"></i></span>
-                                        <span class="name">Jane Doe</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
-                                        <button type="button" class="btn  btn-sm btn-success pull-right">O</button>
-                                    </li>
-                                    <li>
-                                        <span class="gender"><i class="fa fa-venus" aria-hidden="true"></i></span>
-                                        <span class="name">Jane Doe</span>
-                                        <button type="button" class="btn btn-sm btn-danger pull-right">X</button>
-                                        <button type="button" class="btn  btn-sm btn-success pull-right">O</button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        {{--************************--}}
-
-                        <hr>
+                        @endif
+                    </form>
+                    <hr>
+                    <form class="form-horizontal" role="form" method="POST" action="{{url('/comments')}}">
+                        {{csrf_field()}}
                         {{--discussssss--}}
                         <div id="discuss">
                             <h3>Discussion</h3>
                             <div class="col-md-8 col-md-offset-2">
-                                <div class="card">
-                                    <div class="col-md-3 person-info">
-                                        <div class="col-md-12">
-                                            <div class="gender-icon gender-female-icon"></div>
+                                @if($activity->comments != null)
+                                    @foreach($activity->comments as $comment)
+                                        <div class="card">
+                                            <div class="col-md-3 person-info">
+                                                <div class="col-md-12">
+                                                    <div class="gender-icon gender-{{$comment->user->gender}}-icon"></div>
+                                                </div>
+                                                <div class="col-md-12 name">{{$comment->user->username}}</div>
+                                                <div class="col-md-12 time">{{$comment->updated_at}}</div>
+                                            </div>
+                                            <div class="col-md-9 person-info">
+                                                <p class="comment">{{$comment->comment}}</p>
+                                            </div>
                                         </div>
-                                        <div class="col-md-12 name">Jane Doe</div>
-                                        <div class="col-md-12 time">2017/11/12 13:40</div>
+                                    @endforeach
+                                @endif
+                                @if(session('message'))
+                                    <div class="alert alert-danger">
+                                        {{session('message')}}
                                     </div>
-                                    <div class="col-md-9 person-info">
-                                        <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                            officia deserunt mollit anim id est laborum.</p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="col-md-3 person-info">
-                                        <div class="col-md-12">
-                                            <div class="gender-icon gender-male-icon"></div>
-                                        </div>
-                                        <div class="col-md-12 name">Jane Doe</div>
-                                        <div class="col-md-12 time">2017/11/12 13:40</div>
-                                    </div>
-                                    <div class="col-md-9 person-info">
-                                        <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                            officia deserunt mollit anim id est laborum.</p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="col-md-3 person-info">
-                                        <div class="col-md-12">
-                                            <div class="gender-icon gender-neuter-icon"></div>
-                                        </div>
-                                        <div class="col-md-12 name">Jane Doe</div>
-                                        <div class="col-md-12 time">2017/11/12 13:40</div>
-                                    </div>
-                                    <div class="col-md-9 person-info">
-                                        <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                            officia deserunt mollit anim id est laborum.</p>
-                                    </div>
-                                </div>
+                                @endif
                                 {{--create new commet--}}
                                 <div class="card newCard">
                                     <h3>Leave A Comment</h3>
                                     <div class="col-md-3 person-info">
                                         <div class="col-md-12">
-                                            <div class="gender-icon gender-neuter-icon"></div>
+                                            <div class="gender-icon gender-{{$comment->user->gender}}-icon"></div>
                                         </div>
-                                        <div class="col-md-12 name">Jane Doe</div>
-                                        <div class="col-md-12 time">2017/11/12 13:40</div>
+                                        <div class="col-md-12 name">{{\Session::get('username')}}</div>
+                                        <div class="col-md-12 time">{{\Carbon\Carbon::now()}}</div>
                                     </div>
                                     <div class="col-md-9 person-info">
-                                            <textarea name="newcomment" class="form-control" id="newcomment" rows="10"
+                                            <textarea name="comment" class="form-control" id="newcomment" rows="10"
                                             ></textarea>
                                     </div>
+                                    <input type="text" name="activity_id" value="{{$activity->id}}" hidden>
                                 </div>
 
                                 <div class="form-group">
@@ -223,18 +133,15 @@
                                         </button>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
-
                     </form>
 
                 </div>
             </div>
         </div>
     </section>
-
+@stop
 @section('scripts')
     <script>
         //    $('.tag-list .btn').on('click', function () {
@@ -262,5 +169,37 @@
         ////                    ajax #partner-list
         //        }
         //    })
+
+        if ($('#partner-list').children().length === 0) {
+            $('#partner-list').append("<li><span>NULL</span></li>");
+        }
+        $('#apply').click(function () {
+            var activity_id = $(this).data('activity-id');
+            var user_id = $(this).data('user-id');
+            var applicant_user_id = $(this).data('applicant-user-id');
+            console.log(activity_id + " " + user_id + " " + applicant_user_id);
+            $.ajax({
+                url: "http://140.118.109.185/api/activities/apply",
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: {
+                    activity_id: activity_id,
+                    user_id: user_id,
+                    applicant_user_id: applicant_user_id
+                },
+                success: function (data) {
+                    if (!data.error) {
+                        location.reload();
+                    } else {
+                        $('.alert').html(data.message);
+                        $('.alert').show();
+                    }
+                },
+                error: function (err, status, errorThrown) {
+                }
+            });
+        });
     </script>
 @stop

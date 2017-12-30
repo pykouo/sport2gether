@@ -19,9 +19,17 @@
                 {{--<li><a href="#speakers" class="smoothScroll">Speakers</a></li>--}}
                 {{--<li><a href="#program" class="smoothScroll">Programs</a></li>--}}
                 {{--<li><a href="#register" class="smoothScroll">Register</a></li>--}}
-                <li><a href="/activity">Activity</a></li>
-                <li><a href="/user">PEI-YU KUO</a></li>
-                <li><a href="/login">Login/Register</a></li>
+                <li><a href="/activities">Activity</a></li>
+                @if(\Session::get('username'))
+                    <li><a id="navbar-gender" class="gender-icon gender-{{\Session::get('gender')}}-icon
+                                "></a></li>
+                    <li><a href="/user">{{\Session::get('username')}}</a></li>
+                @endif
+                @if(\Session::get('username'))
+                    <li><a href="/logout">Logout</a></li>
+                @else
+                    <li><a href="/login">Login/Register</a></li>
+                @endif
             </ul>
 
         </div>

@@ -19,9 +19,12 @@
                     <h1 class="wow fadeInUp" data-wow-delay="1.6s">Sport2gether</h1>
                     <a href="#overview" class="btn btn-lg btn-default smoothScroll wow fadeInUp hidden-xs"
                        data-wow-delay="2.3s">LEARN MORE</a>
-                    <a href="/register" class="btn btn-lg btn-danger smoothScroll wow fadeInUp" data-wow-delay="2
+                    @if(!\Session::get('username'))
+
+                        <a href="/register" class="btn btn-lg btn-danger smoothScroll wow fadeInUp" data-wow-delay="2
                     .3s">REGISTER
-                        NOW</a>
+                            NOW</a>
+                    @endif
                 </div>
 
 
@@ -41,7 +44,11 @@
                     <h3>This is a website for people to find their sport partners</h3>
                     <p>There's no need to exercise or do sport alone.</p>
                     <p>Join Us.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
 
                 <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.9s">

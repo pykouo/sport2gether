@@ -16,11 +16,25 @@ Route::get('/', 'PagesController@getIndex');
 Route::get('/home', 'PagesController@getIndex');
 
 Route::get('/register','PagesController@getRegister');
+Route::post('/','AuthController@register');
 Route::get('/login','PagesController@getLogin');
-Route::get('/user','PagesController@getUser');
-Route::get('/activity','PagesController@getActivity');
-Route::get('/new-activity','PagesController@getNewActivity');
-Route::get('/activity-detail','PagesController@getActivityDetail');
-
+Route::post('/login','AuthController@login');
+Route::post('/login','AuthController@login');
 Route::auth();
+
+Route::get('/user','PagesController@getUser');
+Route::post('/user','PagesController@updateUser');
+Route::get('/user/activity/{id}','PagesController@showUpdateActivity');
+Route::post('/user/activity/{id}','PagesController@updateActivity');
+
+
+Route::get('/activity/new','PagesController@getNewActivity');
+Route::post('/activity/new','PagesController@insertActivity');
+
+Route::get('/activities','PagesController@getActivities');
+Route::get('/activities/{id}','PagesController@getActivity');
+
+Route::post('/comments','PagesController@insertComment');
+
+
 

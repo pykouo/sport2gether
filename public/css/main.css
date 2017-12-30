@@ -219,7 +219,7 @@ h3 {
 }
 
 .custom-navbar .nav li a:hover {
-    background: transparent;
+    /*background: transparent;*/
     color: #66ccff;
 }
 
@@ -736,6 +736,7 @@ textarea{
 }
 .card{
     overflow: hidden;
+    min-height: 100px;
 }
 .card .name{
     font-size: 15px;
@@ -845,3 +846,12 @@ textarea{
 
 }
 
+.alert{
+    margin-left: 130px;
+    margin-right: 130px;
+}
+#navbar-gender{
+    margin: 20px auto;
+    width: 20px;
+    height: 20px;
+}

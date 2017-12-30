@@ -10,6 +10,11 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h3 class="text-center">Register</h3>
+                    @if(session('message'))
+                        <div class="alert alert-danger text-center">
+                            {{session('message')}}
+                        </div>
+                    @endif
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
@@ -28,7 +33,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group {{ $errors->has('gender') ? ' has-error' : '' }}">
                             <label for="gender" class="col-md-4 control-label">Gender</label>
 
                             <div class="col-md-6">
@@ -44,7 +49,12 @@
                                         <li>Other</li>
                                     </ul>
                                 </div>
-                                <input id="gender" type="text" name="gender" hidden>
+                                <input id="gender" type="text" name="gender" hidden value="Male">
+                                @if ($errors->has('gender'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
